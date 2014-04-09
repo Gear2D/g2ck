@@ -1,0 +1,1 @@
+message(STATUS "Stage 1: Gear2D commands ready")
