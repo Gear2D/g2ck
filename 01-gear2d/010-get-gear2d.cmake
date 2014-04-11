@@ -8,15 +8,18 @@ ExternalProject_Add(
   PREFIX ${EXTERNAL_ROOT}
   URL https://github.com/Gear2D/gear2d/archive/master.zip
   DOWNLOAD_NAME gear2d-master.zip
+  DOWNLOAD_DIR ${DOWNLOAD_DIR}
   CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_ROOT}
 )
 
 ExternalProject_Add(
   gear2d-components
+  DEPENDS gear2d
   PREFIX ${EXTERNAL_ROOT}
   URL https://github.com/Gear2D/gear2d-components/archive/master.zip
   DOWNLOAD_NAME gear2d-components-master.zip
-  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_ROOT}
+  DOWNLOAD_DIR ${DOWNLOAD_DIR}
+  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_ROOT} -DCMAKE_PREFIX_PATH=${EXTERNAL_ROOT}
 )
 
 # Check SDL before building Gear2D
@@ -26,7 +29,3 @@ if (SDL2_FOUND)
 else()
 	include(011-get-sdl2.cmake)
 endif()
-
-
-# Make gear2d-components depend on gear2d
-add_dependencies(gear2d-components gear2d)
