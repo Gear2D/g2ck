@@ -8,7 +8,7 @@ ExternalProject_Add(
   PREFIX ${EXTERNAL_ROOT}
   URL https://github.com/Gear2D/gear2d/archive/master.zip
   DOWNLOAD_NAME gear2d-master.zip
-  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_ROOT} -DSDL2DIR=${EXTERNAL_ROOT}
+  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_ROOT}
 )
 
 ExternalProject_Add(
@@ -16,11 +16,11 @@ ExternalProject_Add(
   PREFIX ${EXTERNAL_ROOT}
   URL https://github.com/Gear2D/gear2d-components/archive/master.zip
   DOWNLOAD_NAME gear2d-components-master.zip
-  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_ROOT} -DSDL2DIR=${EXTERNAL_ROOT}
+  CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_ROOT}
 )
 
 # Check SDL before building Gear2D
-find_package(SDL2 QUIET)
+#find_package(SDL2 QUIET)
 if (SDL2_FOUND)
 	message(STATUS "SDL2 was found! Version ${SDL2_VERSION}")
 else()
