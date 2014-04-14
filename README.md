@@ -19,7 +19,8 @@ G2CK will create an environment prepared for you to create games, components, de
      - /top-level/
        - g2ck/:                    this folder with g2ck scripts
        - g2ck-build/:              g2ck build folder.
-       - external/:                dependencies, tools, etc. Everything required but not found on your system will be installed here.
+       - external/:                dependencies, tools, etc. Everything required but not found on your system will
+                                   be installed here.
        - games/:                   game folders created by means of g2ck (make new-game)
 
 
