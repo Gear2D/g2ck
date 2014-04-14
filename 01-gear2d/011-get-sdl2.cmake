@@ -15,7 +15,7 @@ if (WIN32)
     BUILD_COMMAND ""
     INSTALL_COMMAND 
       COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/lib ${EXTERNAL_ROOT}/lib
-      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/include ${EXTERNAL_ROOT}/include
+      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/include ${EXTERNAL_ROOT}/include/SDL2
   )
   
     # Get SDL2 Mixer dev package
@@ -24,12 +24,12 @@ if (WIN32)
     DEPENDS sdl2
     PREFIX ${EXTERNAL_ROOT}
     DOWNLOAD_DIR ${DOWNLOAD_DIR}
-    https://libsdl.org/projects/SDL_mixer/release/SDL2_mixer-devel-2.0.0-VC.zip
+    URL https://libsdl.org/projects/SDL_mixer/release/SDL2_mixer-devel-2.0.0-VC.zip
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND 
-      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/lib ${EXTERNAL_ROOT}/lib
-      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/include ${EXTERNAL_ROOT}/include
+      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2-mixer/lib ${EXTERNAL_ROOT}/lib
+      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2-mixer/include ${EXTERNAL_ROOT}/include/SDL2
   )
   
     # Get SDL2 Image dev package
@@ -42,8 +42,8 @@ if (WIN32)
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND 
-      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/lib ${EXTERNAL_ROOT}/lib
-      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/include ${EXTERNAL_ROOT}/include
+      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2-image/lib ${EXTERNAL_ROOT}/lib
+      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2-image/include ${EXTERNAL_ROOT}/include/SDL2
   )
   
     # Get SDL2 TTF dev package
@@ -56,8 +56,8 @@ if (WIN32)
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND 
-      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/lib ${EXTERNAL_ROOT}/lib
-      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2/include ${EXTERNAL_ROOT}/include
+      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2-ttf/lib ${EXTERNAL_ROOT}/lib
+      COMMAND ${CMAKE_COMMAND} -E copy_directory ${EXTERNAL_ROOT}/src/sdl2-ttf/include ${EXTERNAL_ROOT}/include/SDL2
   )
 else() # Now, if using anything else, get the sources. (TODO Poor MacOSX guys have nothing yet. :)
 
