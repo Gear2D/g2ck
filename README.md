@@ -7,7 +7,7 @@ Gear2D Creation Kit is a set of CMake scripts that, given a build toochain, can 
 It assumes you have a **build environment** available and **[CMake]** installed, so, before you start, go get them.
 
 - If you're using Apple-made operating systems, you'll want Xcode with gcc.
-- If you're using Windows, use MinGW together with MSys.
+- If you're using Windows, I highly recommend [TDM-GCC] and and the IDE of your choice.
 - If you're using Linux, use your package-manager to set it up for you.
 
 Ready?
@@ -19,7 +19,7 @@ G2CK will create an environment prepared for you to create games, components, de
      - /top-level/
        - g2ck/:                    this folder with g2ck scripts
        - g2ck-build/:              g2ck build folder.
-       - contrib/:                 dependencies, tools, etc. Everything required but not found on your system will be installed here.
+       - external/:                dependencies, tools, etc. Everything required but not found on your system will be installed here.
        - games/:                   game folders created by means of g2ck (make new-game)
 
 
@@ -49,3 +49,4 @@ G2CK will check if you have Gear2D and Gear2D-Components already available. Manu
 If you chose not to install Gear2D beforehand, not to worry. We'll do it for you.
 
 [CMake]: http://cmake.org/cmake/resources/software.html
+[TDM-GCC]: http://tdm-gcc.tdragon.net/
