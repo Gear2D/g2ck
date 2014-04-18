@@ -16,6 +16,15 @@ if (WIN32)
   )
 else()
   # Yay, we need mixer friends.
+
+  ExternalProject_Add(
+    tremor
+    PREFIX ${EXTERNAL_ROOT}
+    DOWNLOAD_DIR ${DOWNLOAD_DIR}
+    SVN_REPOSITORY http://svn.xiph.org/trunk/Tremor/
+    CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${EXTERNAL_ROOT}
+  )  
+  
   ExternalProject_Add(
     flac
     PREFIX ${EXTERNAL_ROOT}
@@ -24,6 +33,7 @@ else()
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${EXTERNAL_ROOT} --disable-xmms-plugin --disable-oggtest --disable-doxygen-docs --disable-rpath
     BUILD_IN_SOURCE 1 # FLAC wants its api/ folder :(
     PATCH_COMMAND patch -Np1 < ${CMAKE_SOURCE_DIR}/patches/flac-1.2.1.patch
+    DEPENDS tremor
   )
   
   ExternalProject_Add(
@@ -33,14 +43,7 @@ else()
     SVN_REPOSITORY svn://svn.icculus.org/smpeg/trunk
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${EXTERNAL_ROOT}
   )  
-  
-  ExternalProject_Add(
-    tremor
-    PREFIX ${EXTERNAL_ROOT}
-    DOWNLOAD_DIR ${DOWNLOAD_DIR}
-    SVN_REPOSITORY http://svn.xiph.org/trunk/Tremor/
-    CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${EXTERNAL_ROOT}
-  )  
+
   
   # Build sdl2-mixer
   ExternalProject_Add(
