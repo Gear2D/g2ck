@@ -9,7 +9,7 @@ message(STATUS "Using ${EXTERNAL_ROOT} to place installed packages")
 
 # Find Gear2D
 message(STATUS "Looking for a Gear2D install")
-find_package(Gear2D QUIET)
+find_package(Gear2D QUIET PATHS ${EXTERNAL_ROOT}/lib/gear2d/cmake)
 if (Gear2D_FOUND)
   message(STATUS "Gear2D was found (version ${GEAR2D_VERSION})")
 else()

@@ -18,6 +18,7 @@ ExternalProject_Add(
   URL https://github.com/Gear2D/gear2d-components/archive/master.zip
   DOWNLOAD_NAME gear2d-components-master.zip
   DOWNLOAD_DIR ${DOWNLOAD_DIR}
+  BINARY_DIR ${EXTERNAL_ROOT}/engine # find_package(Gear2D) tries src/gear2d-build/ dir :(
   CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_ROOT} -DCMAKE_PREFIX_PATH=${EXTERNAL_ROOT}
 )
 
