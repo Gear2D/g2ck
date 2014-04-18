@@ -22,7 +22,7 @@ else()
     PREFIX ${EXTERNAL_ROOT}
     DOWNLOAD_DIR ${DOWNLOAD_DIR}
     SVN_REPOSITORY http://svn.xiph.org/trunk/Tremor/
-    CONFIGURE_COMMAND <SOURCE_DIR>/autogen.sh COMMAND <SOURCE_DIR>/configure --prefix=${EXTERNAL_ROOT}
+    CONFIGURE_COMMAND <SOURCE_DIR>/autogen.sh --prefix=${EXTERNAL_ROOT}
   )  
   
   ExternalProject_Add(
