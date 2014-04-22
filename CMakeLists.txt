@@ -24,3 +24,8 @@ else()
   include(get-gear2d.cmake) # get-gear2d.cmake should deal with any dependencies.
 endif()
 
+# Creates the new-game-helper executable
+add_executable(new-game-helper src/new-game-helper.c)
+
+# Makes available a new-game target
+include(new-game.cmake)
