@@ -51,7 +51,7 @@ endif()
 find_package(SDL2_ttf QUIET)
 if (SDL2_TTF_FOUND)
   add_custom_target(sdl2-ttf)
-  message("SDL2_ttf was found at ${SDL2_TTF_LIBRARY}")
+  message(STATUS "SDL2_ttf was found at ${SDL2_TTF_LIBRARY}")
 else()
   message(STATUS "SDL2_ttf could not be found. It will be built.")
   include(get-sdl2-ttf.cmake)                     # Shall define the 'sdl2-ttf' target
